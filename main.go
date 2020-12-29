@@ -1,6 +1,10 @@
 package main
 
-import "./exercise"
+import (
+	"./config"
+	"./service"
+	"fmt"
+)
 
 /**
 主函数入口
@@ -19,5 +23,14 @@ func main() {
 	//exercise.Collection()
 
 	//练习题
-	exercise.Exercise1()
+	//exercise.Exercise1()
+
+	//连接数据库
+	err := config.InitDB()
+	if err != nil {
+		fmt.Println("init db failed,err:%v\n", err)
+		return
+	}
+
+	service.QueryRowDemo()
 }

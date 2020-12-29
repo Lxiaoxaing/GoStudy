@@ -1,8 +1,6 @@
-package exercise
+package service
 
 import (
-	"../file"
-	"../myMath"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -62,15 +60,15 @@ func Loop() {
 */
 func FileOperation() {
 	//将字符串写到文件
-	file.WriteStringToFile()
+	WriteStringToFile()
 	//将字节写到文件
-	file.WriteByteToFile()
+	WriteByteToFile()
 	//将字符串一行行写入文件
-	file.WriteStringToFileByLine()
+	WriteStringToFileByLine()
 	//追加到文件
-	file.AddStringToFile()
+	AddStringToFile()
 	//并发写入文件
-	file.ConcurrentWriteToFile()
+	ConcurrentWriteToFile()
 }
 
 /**
@@ -128,8 +126,8 @@ func Variable() {
 func Imath() {
 	// 将字符串输出到控制台
 	fmt.Println("hello world")
-	fmt.Println(mathClass.Add(1, 1))
-	fmt.Println(mathClass.Sub(1, 1))
+	fmt.Println(Add(1, 1))
+	fmt.Println(Sub(1, 1))
 
 	srv := http.Server{
 		Addr:    ":8080",
