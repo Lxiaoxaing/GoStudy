@@ -2,7 +2,7 @@ package main
 
 import (
 	"./config"
-	"./service"
+	"./demo"
 	"fmt"
 )
 
@@ -32,5 +32,14 @@ func main() {
 		return
 	}
 
-	service.QueryRowDemo()
+	//单行查询
+	demo.QueryRowDemo()
+	//多行查询
+	demo.QueryMultiRowDemo()
+	//插入数据
+	demo.InsertRowDemo()
+	//更新数据
+	demo.UpdateRowDemo()
+	//删除数据
+	demo.DeleteRowDemo()
 }
