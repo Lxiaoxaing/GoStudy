@@ -2,8 +2,9 @@ package main
 
 import (
 	"./config"
-	"./demo"
+	"./controller"
 	"fmt"
+	"net/http"
 )
 
 /**
@@ -32,14 +33,20 @@ func main() {
 		return
 	}
 
-	//单行查询
-	demo.QueryRowDemo()
-	//多行查询
-	demo.QueryMultiRowDemo()
-	//插入数据
-	demo.InsertRowDemo()
-	//更新数据
-	demo.UpdateRowDemo()
-	//删除数据
-	demo.DeleteRowDemo()
+	////单行查询
+	//demo.QueryRowDemo()
+	////多行查询
+	//demo.QueryMultiRowDemo()
+	////插入数据
+	//demo.InsertRowDemo()
+	////更新数据
+	//demo.UpdateRowDemo()
+	////删除数据
+	//demo.DeleteRowDemo()
+
+	//demo.IHttp()
+	s := http.Server{Addr: ":8899"}
+	// 调用所有user模块 handle
+	controller.UserHandle()
+	s.ListenAndServe()
 }
