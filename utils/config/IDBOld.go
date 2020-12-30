@@ -1,9 +1,6 @@
 package config
 
-import (
-	"database/sql"
-	_ "github.com/go-sql-driver/mysql"
-)
+import "database/sql"
 
 //定义一个全局对象db
 var Db *sql.DB

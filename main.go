@@ -1,8 +1,8 @@
 package main
 
 import (
-	"./config"
 	"./controller"
+	"./utils/config"
 	"fmt"
 	"net/http"
 )

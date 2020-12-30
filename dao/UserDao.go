@@ -1,8 +1,8 @@
 package dao
 
 import (
-	"../config"
 	"../entity"
+	"../utils/config"
 	"fmt"
 )
 

@@ -1,7 +1,7 @@
 package demo
 
 import (
-	"../config"
+	"../utils/config"
 	"fmt"
 )
 
