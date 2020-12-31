@@ -1,4 +1,0 @@
-Welcom to the world of Go1.
-Go is a compiled language.
-It is easu to learn Go.
-File handing is easy
