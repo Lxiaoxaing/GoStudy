@@ -1,7 +1,7 @@
-package controller
+package handlers
 
 import (
-	"../service"
+	"../models"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -27,8 +27,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	//参数解析
 	uname := r.FormValue("uname")
 	pwd := r.FormValue("pwd")
-
-	c := service.LoginService(uname, pwd) //登录逻辑
+	c :=models.LoginDao(uname, pwd);
 	b, _ := json.Marshal(c)               //结构转对象
 	w.Header().Set("Content-Type", "application/json;charset=uft-8")
 	w.Write(b)

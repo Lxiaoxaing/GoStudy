@@ -1,10 +1,8 @@
 package main
 
 import (
-	"./controller"
-	"./utils/config"
+	"./main/pkg/utils/config"
 	"fmt"
-	"net/http"
 )
 
 /**
@@ -45,8 +43,8 @@ func main() {
 	//demo.DeleteRowDemo()
 
 	//demo.IHttp()
-	s := http.Server{Addr: ":8899"}
-	// 调用所有user模块 handle
-	controller.UserHandle()
-	s.ListenAndServe()
+	//s := http.Server{Addr: ":8899"}
+	//// 调用所有user模块 handle
+	//handlers.UserHandle()
+	//s.ListenAndServe()
 }

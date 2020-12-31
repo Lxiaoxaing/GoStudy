@@ -1,12 +1,12 @@
-package dao
+package models
 
 import (
-	"../entity"
 	"../utils/config"
 	"fmt"
+	"../models"
 )
 
-func LoginDao(uname, pwd string) *entity.User {
+func LoginDao(uname, pwd string) *models.User {
 	sqlStr := "select id,username,`password`,phone,email,created,updated from user where username=? and password=?"
 	rows, err := config.Db.Query(sqlStr, uname, pwd)
 	if err != nil {
@@ -17,7 +17,7 @@ func LoginDao(uname, pwd string) *entity.User {
 	defer rows.Close()
 
 	for rows.Next() {
-		user := new(entity.User)
+		user := new(models.User)
 		rows.Scan(&user.Id, &user.Username, &user.Password, &user.Phone, &user.Email, &user.Created, &user.Updated)
 		return user
 	}
