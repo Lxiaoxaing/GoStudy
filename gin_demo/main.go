@@ -32,8 +32,22 @@ func main() {
 	//参数绑定
 	paramBind(r)
 
+	//文件上传
+	fileUpload(r)
+
+	FileUpload(r)
+
 	//启动HTTP服务，默认在0.0.0.0:80880启动服务
 	r.Run(":8080")
+}
+
+//文件上传
+func fileUpload(r *gin.Engine) {
+	//处理multipart forms提交文件时默认的内存限制是32M
+	//可以通过下面的方式修改
+	r.POST("/upload")
+
+
 }
 
 //参数绑定
