@@ -5,37 +5,38 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Hello(r *gin.Engine) {
+func HelloHandler(c *gin.Context) {
+	// c.JSON:返回JSON格式的数据
 	//GET：请求方式；/hello:请求路径
 	//当客户端以GET方法请求/hello路径时，会执行后面的匿名函数
-	r.GET("/hello", func(c *gin.Context) {
-		// c.JSON:返回JSON格式的数据
-		c.JSON(200, gin.H{
-			"message": "Hello world!",
-		})
+	c.JSON(200, gin.H{
+		"message": "Hello world!",
 	})
-
-	r.GET("/book", func(c *gin.Context) {
-		c.JSON(middleware.SuccessCode, gin.H{
-			"message": "GET",
-		})
+}
+func GetHandler(c *gin.Context) {
+	// c.JSON:返回JSON格式的数据
+	c.JSON(middleware.SuccessCode, gin.H{
+		"message": "GET",
 	})
+}
 
-	r.POST("/book", func(c *gin.Context) {
-		c.JSON(middleware.SuccessCode, gin.H{
-			"message": "POST",
-		})
+func PostHandler(c *gin.Context) {
+	// c.JSON:返回JSON格式的数据
+	c.JSON(middleware.SuccessCode, gin.H{
+		"message": "POST",
 	})
+}
 
-	r.PUT("/book", func(c *gin.Context) {
-		c.JSON(middleware.SuccessCode, gin.H{
-			"message": "PUT",
-		})
+func PutHandler(c *gin.Context) {
+	// c.JSON:返回JSON格式的数据
+	c.JSON(middleware.SuccessCode, gin.H{
+		"message": "PUT",
 	})
+}
 
-	r.DELETE("/book", func(c *gin.Context) {
-		c.JSON(middleware.SuccessCode, gin.H{
-			"message": "DELETE",
-		})
+func DeleteHandler(c *gin.Context) {
+	// c.JSON:返回JSON格式的数据
+	c.JSON(middleware.SuccessCode, gin.H{
+		"message": "DELETE",
 	})
 }

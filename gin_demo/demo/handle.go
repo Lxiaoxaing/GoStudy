@@ -5,24 +5,16 @@ import (
 	"net/http"
 )
 
-func Handle(r *gin.Engine) {
-	redirect(r)
-	route(r)
+//重定向
+func HttpRedirect(c *gin.Context) {
+	c.Redirect(http.StatusMovedPermanently, "http://www.sogo.com/")
 }
 
-//重定向
-func redirect(r *gin.Engine) {
-	//HTTP重定向
-	r.GET("/test", func(c *gin.Context) {
-		c.Redirect(http.StatusMovedPermanently, "http://www.sogo.com/")
-	})
-
-	//路由重定向
-	r.GET("/test2", func(c *gin.Context) {
-		//指定重定向的URL
-		c.Request.URL.Path = "/test"
-		r.HandleContext(c)
-	})
+//路由重定向
+func RouterRedirect(r *gin.Engine, c *gin.Context) {
+	//指定重定向的URL
+	c.Request.URL.Path = "/test"
+	r.HandleContext(c)
 }
 
 //路由
