@@ -1,0 +1,11 @@
+server:
+   port:8889
+
+datasource:
+   driverName:mysql
+   host:127.0.0.1
+   port:8400
+   database:my_test
+   username:root
+   password:bhjRjxwC8EBqaJC7
+   charset:utf8
